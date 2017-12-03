@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/loginoption" android:title="@string/changeUser" android:icon="@drawable/edit_user_icon" android:showAsAction="always"></item>
+    
+
+</menu>

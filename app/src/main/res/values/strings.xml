@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Japanische Summen</string>
+    <string name="playfieldsize">Spielfeldgröße</string>
+    <string name="maxNumber">Maximalwert</string>
+    <string name="solveButton">Löse Rätsel</string>
+    <string name="newGame">Neues Spiel</string>
+    <string name="regeln">wie funktionieren Japanische Summen?</string>
+    <string name="notimplementes">Diese Funktion ist noch nicht implementiert, dies ist für die nächste Version geplant!</string>
+    <string name="explain">Wie funktioniert das Spiel?</string>
+    <string name="title_activity_playfield">Japanische Summen</string>
+    <string name="solve">Löse!</string>
+    <string name="back">Zurück</string>
+    <string name="leereVorgabe">...</string>
+    <string name="leererEintrag"></string>
+    <string name="EnterSums">Gib die Folge von Summen ein (z.B. 3 5 7)</string>
+    <string name="okay">Okay</string>
+    <string name="numberInvalid">Die eingabe darf nur Zahlen, getrennt durch Leerzeichen, enthalten.</string>
+    <string name="cancel">Cancel</string>
+    <string name="playfieldnotOkay">Bitte fülle erst alle Summenfelder aus!</string>
+    <string name="progressdialog">berechne Eintraege(2/2)</string>
+    <string name="thereisnoSolution">Für diese Summenfelder existiert keine Lösung</string>
+    <string name="noSolutionFound">Die Lösung für dieses Rätsel ist nicht eindeutig!</string>
+    <string name="numberToBig">Einer der Werte ist zu groß für den Wertebereich!</string>
+    <string name="enterSum">Eingabe Summen</string>
+    <string name="progressPermut">berechne Permutationen (1/2)</string>
+    <string name="toComplex">Auf diesem Gerät ist nicht genug RAM zur Lösung dieses Rätsels verfügbar.</string>
+    <string name="createRiddle">erstelle Rätsel</string>
+    <string name="richtig">GRATULATION! Erreichte Punkte:</string>
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="check">Check</string>
+    <string name="highscore">Highscore:</string>
+    <string name="userName">Benutzername</string>
+    <string name="usernameText">Der Benutzername wird für die Onlinehighscoreliste benötigt- Wenn Sie offline wählen gehen erzielte Punkte verloren. </string>
+    <string name="newUserButton">Neuer Nutzer</string>
+    <string name="loginButton">Login</string>
+    <string name="offlineButton">Offline</string>
+    <string name="spaceButton">Space</string>
+    <string name="internetError">Fehler beim Zugriff auf den Highscoreserver, verusche es später noch mal!</string>
+    <string name="angemeldet">Du spielst nun als:</string>
+    <string name="nameExisitiert">Der Benutzername is leider schon vergeben. Wähle einen anderen!</string>
+    <string name="nosuchUser">Benutzername existiert nicht!</string>
+    <string name="points">Punkte</string>
+    <string name="yourscore">Deine Punkte:</string>
+    <string name="welcome">Hallo:</string>
+    <string name="changeUser">Ändere Nutzer</string>
+    <string name="punktemax">Zahlen bestimmt:  </string>
+    <string name="punkteabzug">Check genutzt:  </string>
+    <string name="punktesumme">Summe:  </string>
+    <string name="erreichtePunkte">Erreichte Punkte</string>
+
+</resources>

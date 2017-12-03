@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout_activity_start.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/layout/activity_start.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/drawable_edit_user_icon.png.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/drawable/edit_user_icon.png"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout_newuserdialog.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/layout/newuserdialog.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout_gameevaluation.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/layout/gameevaluation.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout_summen_eingabedialog.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/layout/summen_eingabedialog.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout_activity_playfield.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/layout/activity_playfield.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/drawable_blackrectangle.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/drawable/blackrectangle.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/menu_settingsmenu.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/menu/settingsmenu.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/drawable_rectangle.xml.flat",
+        "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/drawable/rectangle.xml"
+    }
+]

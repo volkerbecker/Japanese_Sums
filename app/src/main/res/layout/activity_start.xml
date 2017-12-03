@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hintergrundfarbe"
+    android:gravity="center_vertical"
+    tools:context="${packageName}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/maxNumberPicker"
+        android:text="@string/maxNumber" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/playfieldSizePicker"
+        android:text="@string/playfieldsize" />
+
+    <NumberPicker
+        android:id="@+id/playfieldSizePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/solveButton2"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:id="@+id/solveButton2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newGameButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/solveButton" />
+
+    <Button
+        android:id="@+id/newGameButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playfieldSizePicker"
+        android:layout_centerHorizontal="true"
+        android:text="@string/newGame" />
+
+    <NumberPicker
+        android:id="@+id/maxNumberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/solveButton2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-50dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/welcome"
+        android:layout_below="@+id/solveButton2"
+        android:layout_marginTop="21dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/highscores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/welcome"
+        android:layout_below="@+id/textView4"
+        android:text="TextView"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</RelativeLayout>
