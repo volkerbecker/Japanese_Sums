@@ -345,7 +345,6 @@ public class SumPermutations {
 
             } while (notcomplete);
         }
-        Log.d(DEBUG_TAG, "erzeugte permutationen: " + zeileToAdd);
         alloczeilen = null;
         if (zeilen.size() == 0) {
             throw new IllegalStateException("There is no solution!");

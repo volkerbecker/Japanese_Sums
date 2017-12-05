@@ -137,6 +137,8 @@ public class PlayfieldActivity extends Activity implements OnClickListener {
 			vorgabenVertikal[i].setGravity(Gravity.BOTTOM
 					| Gravity.CENTER_HORIZONTAL);
 			vorgabenVertikal[i].setText(R.string.leereVorgabe);
+			vorgabenVertikal[i].setBackgroundColor(getResources().getColor(R.color.white));
+			vorgabenVertikal[i].setTextColor(getResources().getColor(R.color.black));
 			if(!isAGame) {  
 				vorgabenVertikal[i].setOnClickListener(this); // Summen nur Editierbar wenn als solver genutzt
 			}
@@ -152,6 +154,8 @@ public class PlayfieldActivity extends Activity implements OnClickListener {
 					| Gravity.CENTER_VERTICAL);
 			// vorgabenHorizontal[i].setHeight(zellhight);
 			vorgabenHorizontal[i].setText(R.string.leereVorgabe);
+			vorgabenHorizontal[i].setBackgroundColor(getResources().getColor(R.color.white));
+			vorgabenHorizontal[i].setTextColor(getResources().getColor(R.color.black));
 			GridLayout.LayoutParams buttonparams = new GridLayout.LayoutParams();
 			buttonparams.setGravity(Gravity.FILL_HORIZONTAL);
 			playField.addView(vorgabenHorizontal[i], buttonparams);
@@ -458,6 +462,7 @@ public class PlayfieldActivity extends Activity implements OnClickListener {
 		case R.id.backButton:
 			// Intent intent = new Intent(this, StartActivity.class);
 			// startActivity(intent);
+			this.setResult((int)0);
 			this.finish();
 			break;
 		case R.id.checkButton:
@@ -548,7 +553,7 @@ public class PlayfieldActivity extends Activity implements OnClickListener {
 	
 	private void showEvaluationDialog() {
 		FragmentManager fm = getFragmentManager();
-		EvaluationDialog evaluate = new EvaluationDialog(this);
+		EvaluationDialog evaluate = EvaluationDialog.newInstance(this); //.newInstance(this);
 		evaluate.setChecks(checkcounter);
 		evaluate.setMaxPoints(playfieldSize*playfieldSize);
 		evaluate.setCancelable(false);

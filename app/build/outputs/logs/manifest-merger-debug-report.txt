@@ -41,18 +41,6 @@ ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifes
 		ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:10:22-64
 application
 ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:12:5-31:19
-	android:enabled
-		ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:17:41-63
-	android:label
-		ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:16:9-41
-	android:largeHeap
-		ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:13:9-33
-	android:icon
-		ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:15:9-45
-	android:allowBackup
-		ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:14:9-35
-	android:theme
-		ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:17:9-40
 activity#de.amazingsax.japanese_sums.StartActivity
 ADDED from /home/becker/StudioProjects/Japanese_Sums/app/src/main/AndroidManifest.xml:18:9-26:20
 	android:screenOrientation

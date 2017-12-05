@@ -38,10 +38,16 @@ public class EvaluationDialog extends DialogFragment implements OnClickListener{
 	public void setChecks(int checks) {
 		this.checks = checks;
 	}
-	
-	public EvaluationDialog(Context context) {
-		this.context=context;
+
+	public static EvaluationDialog newInstance(Context context)
+	{
+		EvaluationDialog f = new EvaluationDialog();
+		f.context=context;
+		return f;
 	}
+	//public EvaluationDialog(Context context) {
+	//	this.context=context;
+	//}
 
 	/**
 	 * Initialisert Dialog, zdigt Punkte an

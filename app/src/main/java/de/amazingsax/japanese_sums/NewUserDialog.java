@@ -37,10 +37,19 @@ public class NewUserDialog extends DialogFragment implements OnClickListener {
 	boolean sucess=false;
 	boolean interneterror=false;
 	int points;
-	
-	public NewUserDialog(Context context) {
-		this.context=context;
+
+	public NewUserDialog() {}
+
+	public static  NewUserDialog newInstance(Context context) {
+		NewUserDialog f = new NewUserDialog();
+		f.context=context;
+		return f;
 	}
+
+
+	//public NewUserDialog(Context context) {
+	//	this.context=context;
+	//}
 
 	/**
 	 * Klasse zur Kommunikation mit dem Higgh Score Server
@@ -56,7 +65,7 @@ public class NewUserDialog extends DialogFragment implements OnClickListener {
 				HttpResponse response = client.execute(request);
 				HttpEntity entity = response.getEntity();
 				InputStreamReader reader = new InputStreamReader(entity.getContent(),"utf-8");
-				
+
 				String answer = "";
 				int c = reader.read();
 				while(c != -1) {
@@ -204,7 +213,10 @@ public class NewUserDialog extends DialogFragment implements OnClickListener {
 		Button loginButton = (Button)view.findViewById(R.id.loginButton);
 		Button offlineButton = (Button)view.findViewById(R.id.offlineButton);
 		usernameField = (EditText)view.findViewById(R.id.usernameEdit);
-		
+		StartActivity start = (StartActivity)context;
+		username=start.getUsername();
+		if(username=="Anonymous") username="";
+		usernameField.setText(username);
 		newuserButton.setOnClickListener(this);
 		loginButton.setOnClickListener(this);
 		offlineButton.setOnClickListener(this);
@@ -265,7 +277,7 @@ public class NewUserDialog extends DialogFragment implements OnClickListener {
 	/**
 	 * Speichere aktuellen Usernamen auf Gerät
 	 */
-	private void saveUsernameLokal() {
+	public void saveUsernameLokal() {
 		SharedPreferences pref=context.getSharedPreferences("GAME",0);
 		SharedPreferences.Editor editor = pref.edit();
 		editor.putBoolean("ONLINE",true);
@@ -278,7 +290,7 @@ public class NewUserDialog extends DialogFragment implements OnClickListener {
 	/**
 	 * Offline Spiel ohne Highscoreliste starten
 	 */
-	private void setOfflineGame() {
+	public void setOfflineGame() {
 		SharedPreferences pref=context.getSharedPreferences("GAME",0);
 		SharedPreferences.Editor editor = pref.edit();
 		editor.putBoolean("ONLINE",false);

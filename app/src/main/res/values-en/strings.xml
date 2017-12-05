@@ -10,7 +10,6 @@
     <string name="notimplementes">this functionality is not implemented yet but planned for the next version.</string>
     <string name="explain">what are the rules?</string>
     <string name="title_activity_playfield">Japanese Sums</string>
-    <string name="hello_world">Hello world!</string>
     <string name="solve">Solve</string>
     <string name="back">Back</string>
     <string name="leereVorgabe">...</string>
@@ -34,7 +33,7 @@
     <string name="undo">Undo</string>
     <string name="redo">Redo</string>
     <string name="highscore">Highscore:</string>
-    <string name="userName">Username</string>
+    <string name="userName">Login</string>
     <string name="usernameText">You need a username for the online highscore list. If you choose to play offline, archieved points will be lost. </string>
     <string name="newUserButton">New User</string>
     <string name="internetError">Error during the highscore server acces, try again later!</string>
@@ -49,5 +48,7 @@
     <string name="punkteabzug">Checks:  </string>
     <string name="punktesumme">Sum:  </string>
     <string name="erreichtePunkte">Archieved Points</string>
+    <string name="offlineButton">Offline</string>
+    <string name="loginButton">Login</string>
 
 </resources>

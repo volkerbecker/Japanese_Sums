@@ -32,7 +32,7 @@
     <string name="redo">Redo</string>
     <string name="check">Check</string>
     <string name="highscore">Highscore:</string>
-    <string name="userName">Benutzername</string>
+    <string name="userName">Login</string>
     <string name="usernameText">Der Benutzername wird für die Onlinehighscoreliste benötigt- Wenn Sie offline wählen gehen erzielte Punkte verloren. </string>
     <string name="newUserButton">Neuer Nutzer</string>
     <string name="loginButton">Login</string>

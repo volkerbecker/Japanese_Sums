@@ -4,5 +4,6 @@
     <color name="falsch">#FF0000</color>
     <color name="richtig">#00FF00</color>
     <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
     
 </resources>

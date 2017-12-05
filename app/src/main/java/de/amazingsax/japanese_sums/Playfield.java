@@ -338,7 +338,7 @@ public class Playfield extends Thread {
             numberOFpermutations += tmpsumpermutation.determineNumberOfpermurtations();
             hpertubations.add(tmpsumpermutation);
         } //komplexitaet abschaetzen
-        Log.d("amazing", "permutations: " + numberOFpermutations);
+
 
 
         if (maxMemory * empiricalMemoryFactor < numberOFpermutations) {
