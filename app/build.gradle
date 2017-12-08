@@ -20,4 +20,8 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:19.1.0'
+    compile 'org.jetbrains:annotations-java5:15.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2-alpha1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2-alpha1'
+    testImplementation 'junit:junit:4.12'
 }
