@@ -18,16 +18,21 @@ import android.widget.Toast;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TextView;
 
+import java.util.EventObject;
+
+import static android.text.TextUtils.split;
+
 /**
  * Die Activity mit der dioe App startet, hier werden alle Einstellungen vorgenommen
  */
-public class StartActivity extends Activity implements OnClickListener {
+public class StartActivity extends Activity implements OnClickListener, OnHighscoreChangeListener {
 
     final int maxplayfieldSize = 15; // gibt eignetlich keinen zwingenden Grund
     final int maxnumber = 9; // aber wenn zweistellige Zahlen erlaubt waeren wirds unübersichtlich
 
     String username = "";
     int points = 0;
+    HighScoreCommunicator highScoreCommunicator;
 
 
     boolean online = false;
@@ -109,6 +114,9 @@ public class StartActivity extends Activity implements OnClickListener {
         playButton.setOnClickListener(this);
         solveButton.setOnClickListener(this);
 
+        highScoreCommunicator = HighScoreCommunicator.getInstace();
+        highScoreCommunicator.addOnHighscoreChangeListener(this);
+
         Runtime rt = Runtime.getRuntime();
         long maxMemory = rt.maxMemory();
         Log.v("amazing", "maxMemory:" + Long.toString(maxMemory));
@@ -118,7 +126,7 @@ public class StartActivity extends Activity implements OnClickListener {
         Log.v("amazing", "memoryClass:" + Integer.toString(memoryClass));
 
         loadSettings();
-        if (online == true) {
+        if (online == true  && username == null) {
             showNewUserDialog();
         }
     }
@@ -154,9 +162,6 @@ public class StartActivity extends Activity implements OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-        TextView tv = (TextView) findViewById(R.id.highscores);
-        if(!online) tv.setVisibility(View.INVISIBLE); else
-            tv.setVisibility(View.VISIBLE);
         updateUserdata();
 
     }
@@ -165,21 +170,33 @@ public class StartActivity extends Activity implements OnClickListener {
         SharedPreferences pref = getSharedPreferences("GAME", 0);
         username = pref.getString("USERNAME", null);
         online = pref.getBoolean("ONLINE", true);
-        points = pref.getInt("POINTS", 0);
+        if (!online) {
+            points = 0;
+        } else {
+            highScoreCommunicator.readHighscore(2, 1);
+            highScoreCommunicator.loginAsUser(username);
+        }
     }
 
     public void updateUserdata() {
         loadSettings();
-        if (!online) username = "Anonymous";
+        TextView tv1 = (TextView) findViewById(R.id.highscores);
+        TextView yourscore = (TextView) findViewById(R.id.textView4);
+        if (!online) {
+            username = "Anonymous";
+            tv1.setVisibility(View.INVISIBLE);
+            yourscore.setVisibility(View.INVISIBLE);
+        } else {
+            tv1.setVisibility(View.VISIBLE);
+            yourscore.setVisibility(View.VISIBLE);
+        }
+
         TextView welcome = (TextView) findViewById(R.id.welcome);
         welcome.setText(getResources().getString(R.string.welcome) + " " + username);
-        TextView yourscore = (TextView) findViewById(R.id.textView4);
-        String s = getResources().getString(R.string.yourscore) + " " + Integer.toString(points);
-        yourscore.setText(s);
-        TextView tv = (TextView) findViewById(R.id.highscores);
-        if(!online) tv.setVisibility(View.INVISIBLE); else {
-            tv.setVisibility(View.VISIBLE);
-            new ReadHighscore(this).execute();
+
+        if (!online) ;
+        else {
+            tv1.setVisibility(View.VISIBLE);
         }
     }
 
@@ -196,7 +213,7 @@ public class StartActivity extends Activity implements OnClickListener {
             addHighscore updatePoints = new addHighscore(this);
             updatePoints.setPointsToAdd(resultCode);
             updatePoints.setUsername(username);
-            if(online) updatePoints.execute();
+            if (online) updatePoints.execute();
             points += resultCode;
             saveSettings();
             updateUserdata();
@@ -237,6 +254,34 @@ public class StartActivity extends Activity implements OnClickListener {
             default:
                 break;
         }
+
+    }
+
+    @Override
+    public void highScoreChanged(HighScoreEvent event) {
+        String answer = event.getResponse();
+        if (event.getEtype() == HighScoreEvent.HEventType.HIGHSCORE) {
+            String result[] = split(answer, "\n");
+            String champion[] = split(result[0], ",");
+            String s2 = this.getResources().getString(R.string.highscore);
+            if (champion.length == 2) {
+                s2 += " " + champion[1] + " (" + champion[0] + ")";
+                s2 = s2.replace("\n", "");
+            } else {
+                s2 += "???";
+            }
+            TextView tv = (TextView) findViewById(R.id.highscores);
+            tv.setText(s2);
+        } else if (event.getEtype() == HighScoreEvent.HEventType.POINTS) {
+            if (answer != "no such user") {
+                answer=answer.replace("\n","");
+                points = Integer.parseInt(answer);
+                TextView yourscore = (TextView) findViewById(R.id.textView4);
+                String s = getResources().getString(R.string.yourscore) + " " + Integer.toString(points);
+                yourscore.setText(s);
+            }
+        }
+
 
     }
 }

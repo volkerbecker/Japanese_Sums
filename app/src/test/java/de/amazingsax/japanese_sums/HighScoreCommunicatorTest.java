@@ -9,8 +9,18 @@ import static org.junit.Assert.*;
 public class HighScoreCommunicatorTest {
 
     @Test
-    public void testReadHighscore() {
-        HighScoreCommunicator communicator = new HighScoreCommunicator();
+    public void testReadHighscore() throws Exception{
+        HighScoreCommunicator communicator = HighScoreCommunicator.getInstace();
         communicator.readHighscore(10,0);
+        assertTrue(communicator.isSucces());
+    }
+
+    @Test
+    public void testLoginAsUser() throws Exception{
+        HighScoreCommunicator communicator = HighScoreCommunicator.getInstace();
+        communicator.loginAsUser("amazing sax"); // exisiting usernam
+        assertTrue(communicator.isSucces());
+        communicator.loginAsUser("absurderNamemimi"); // exisiting usernam
+        assertTrue(communicator.isSucces());
     }
 }
