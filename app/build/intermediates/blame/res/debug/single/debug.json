@@ -84,12 +84,12 @@
         "source": "/home/becker/StudioProjects/Japanese_Sums/app/src/main/res/layout/summen_eingabedialog.xml"
     },
     {
-        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
-        "source": "/home/becker/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3bb2d2d322655050921d164fc3966050/res/layout-v21/notification_template_icon_group.xml"
-    },
-    {
         "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_custom.xml.flat",
         "source": "/home/becker/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/7f60c7f3c69e7ea93fb5a094c4e9f410/res/layout/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
+        "source": "/home/becker/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3bb2d2d322655050921d164fc3966050/res/layout-v21/notification_template_icon_group.xml"
     },
     {
         "merged": "/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",

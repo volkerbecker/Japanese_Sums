@@ -1,7 +1,27 @@
 #Internal package file, do not edit.
-#Sat Dec 09 01:37:58 CET 2017
-0.baseType=DIRECTORY
-0.base=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/284
+#Sun Dec 10 02:50:51 CET 2017
+2.base=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/296
+5.set=DEX
 0.path=classes.dex
+2.baseType=DIRECTORY
+3.base=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/300
+2.set=DEX
+1.path=classes.dex
+4.base=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/298
+count=6
+5.baseType=DIRECTORY
+2.path=classes.dex
+5.base=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/301
+4.set=DEX
+3.path=classes.dex
+3.baseType=DIRECTORY
+1.set=DEX
+4.path=classes.dex
+1.baseType=DIRECTORY
+5.path=classes.dex
+0.base=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/297
+0.baseType=DIRECTORY
+3.set=DEX
+1.base=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/299
+4.baseType=DIRECTORY
 0.set=DEX
-count=1

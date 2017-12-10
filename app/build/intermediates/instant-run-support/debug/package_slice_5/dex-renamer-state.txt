@@ -1,4 +1,4 @@
-#Fri Dec 08 23:49:04 CET 2017
-base.0=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/271
+#Sun Dec 10 02:16:04 CET 2017
+base.0=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/290
 path.0=classes.dex
 renamed.0=classes.dex

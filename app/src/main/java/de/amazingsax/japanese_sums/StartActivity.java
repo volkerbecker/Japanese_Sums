@@ -174,7 +174,7 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
             points = 0;
         } else {
             highScoreCommunicator.readHighscore(2, 1);
-            highScoreCommunicator.loginAsUser(username);
+            if(username != null) highScoreCommunicator.loginAsUser(username);
         }
     }
 
@@ -210,10 +210,7 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
-            addHighscore updatePoints = new addHighscore(this);
-            updatePoints.setPointsToAdd(resultCode);
-            updatePoints.setUsername(username);
-            if (online) updatePoints.execute();
+            if (online && resultCode >0) highScoreCommunicator.addScore(username,resultCode);
             points += resultCode;
             saveSettings();
             updateUserdata();
@@ -273,7 +270,7 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
             TextView tv = (TextView) findViewById(R.id.highscores);
             tv.setText(s2);
         } else if (event.getEtype() == HighScoreEvent.HEventType.POINTS) {
-            if (answer != "no such user") {
+            if (!answer.equals("no such user\n")) {
                 answer=answer.replace("\n","");
                 points = Integer.parseInt(answer);
                 TextView yourscore = (TextView) findViewById(R.id.textView4);

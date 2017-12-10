@@ -8,7 +8,7 @@ import java.util.EventObject;
 
 public class HighScoreEvent extends EventObject {
     public static enum HEventType {
-        HIGHSCORE , POINTS
+        HIGHSCORE , POINTS , ADDED
     }
     private String response;
     private HighScoreCommunicator communicator;

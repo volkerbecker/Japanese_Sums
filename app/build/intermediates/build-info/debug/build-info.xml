@@ -3,23 +3,22 @@
     abi="x86"
     api-level="27"
     build-mode="COLD"
-    density="xhdpi"
+    density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
     plugin-version="3.0.1"
-    timestamp="1512779575050"
+    timestamp="1512872793946"
     token="6285721132157355186"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="71" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="9" />
+        duration="0" />
     <task
         name="verifier"
         duration="0" />
@@ -30,7 +29,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1512779240689"
+        timestamp="1512872352103"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
@@ -71,8 +70,7 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1512779575050"
+        timestamp="1512872793946"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/split-apk/debug/slices/slice_1.apk"

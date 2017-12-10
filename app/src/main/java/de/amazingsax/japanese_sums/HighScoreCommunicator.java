@@ -115,6 +115,7 @@ public class HighScoreCommunicator {
      * @param u username
      */
     public void addNewUser(String u) {
+
     }
 
     ;
@@ -199,7 +200,33 @@ public class HighScoreCommunicator {
      * @param u     username
      * @param score new points
      */
-    public void addScore(String u, int score) {
+    public void addScore(final String u, final int score) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(final Void... params) {
+                String username=u;
+                username=username.replace(" ","+");
+                String paramter = baseParameter + "&name=" + username + "&points=" + Integer.toString(score);
+                answer = httpRequest(paramter);
+                System.out.println(answer);
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void Result) {
+                succes = (answer.equals("done\n"));
+                if (succes) {
+                    HighScoreEvent event = new HighScoreEvent(HighScoreCommunicator.this);
+                    HighScoreEvent.HEventType type = HighScoreEvent.HEventType.ADDED;
+                    event.setEtype(type);
+                    event.setResponse(answer);
+                    onHighscoreChanged(event);
+                }
+                super.onPostExecute(Result);
+            }
+
+        }.execute();
+
     }
 
 

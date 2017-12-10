@@ -23,4 +23,10 @@ public class HighScoreCommunicatorTest {
         communicator.loginAsUser("absurderNamemimi"); // exisiting usernam
         assertTrue(communicator.isSucces());
     }
+    @Test
+    public void testAddHighScore() throws Exception{
+        HighScoreCommunicator communicator = HighScoreCommunicator.getInstace();
+        communicator.addScore("amazing sax",1);
+        assertTrue(communicator.isSucces());
+    }
 }
