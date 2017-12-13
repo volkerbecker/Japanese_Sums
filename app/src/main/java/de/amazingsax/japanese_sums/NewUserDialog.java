@@ -69,84 +69,20 @@ public class NewUserDialog extends DialogFragment implements OnClickListener, On
                 saveUsernameLokal();
                 NewUserDialog.this.dismiss();
             }
-
-        }
-    }
-
-    //public NewUserDialog(Context context) {
-    //	this.context=context;
-    //}
-
-    /**
-     * Klasse zur Kommunikation mit dem Higgh Score Server
-     * wird als Async Task ausgefvüllt um UI Thread nicht zu blockieren
-     */
-    class AddNewUser extends AsyncTask<Void, Void, Boolean> {
-
-        @Override
-        protected Boolean doInBackground(Void... arg0) {
-            try {
-                AndroidHttpClient client = AndroidHttpClient.newInstance("japsum");
-                HttpGet request = new HttpGet(Constants.highscoreserver + "?game=" + Constants.game + "&newuser=" + username);
-                HttpResponse response = client.execute(request);
-                HttpEntity entity = response.getEntity();
-                InputStreamReader reader = new InputStreamReader(entity.getContent(), "utf-8");
-
-                String answer = "";
-                int c = reader.read();
-                while (c != -1) {
-                    answer += (char) c;
-                    c = reader.read();
-                }
-                client.close();
-                interneterror = false;
-                if (answer.equals("true\n")) {
-                    sucess = true;
-                } else {
-                    sucess = false;
-                }
-            } catch (UnsupportedEncodingException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IllegalStateException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                interneterror = true;
-            }
-            return null;
-        }
-
-        /**
-         * Zeigt dem user ob alles geklappt hat oder nicht.
-         *
-         * @param result
-         */
-        @Override
-        protected void onPostExecute(Boolean result) {
-            if (interneterror == true) {
-                Toast toast = Toast.makeText(context, R.string.internetError, Toast.LENGTH_LONG);
-                toast.show();
+        } else if (event.getEtype() == HighScoreEvent.HEventType.NEWUSER) {
+            if (event.getResponse().equals("true\n")) {
+                username = username.replace("+", " ");
+                showToast(getResources().getString(R.string.angemeldet) + " " + username);
+                points = 0;
+                saveUsernameLokal();
+                NewUserDialog.this.dismiss();
             } else {
-                if (sucess) {
-                    username = username.replace("+", " ");
-                    showToast(getResources().getString(R.string.angemeldet) + " " + username);
-                    points = 0;
-                    saveUsernameLokal();
-                    NewUserDialog.this.dismiss();
-                } else {
-                    showToast(getResources().getString(R.string.nameExisitiert));
-                }
+                showToast(getResources().getString(R.string.nameExisitiert));
             }
-            super.onPostExecute(result);
         }
     }
 
-    /**
-     * Am Highscoreserver als bestehender User anmelden
-     * Internetzugriff als async Task um UI Thread nicht zu blockieren.
-     */
-
+  
 
     /**
      * Gibt Medung aus
@@ -225,7 +161,7 @@ public class NewUserDialog extends DialogFragment implements OnClickListener, On
 
     //Startet Async Task für Anmeldung als neuer User
     private void addNewUser() {
-        new AddNewUser().execute();
+        highScoreCommunicator.tryAddNewUser(username);
     }
 
 
