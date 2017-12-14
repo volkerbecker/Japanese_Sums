@@ -114,8 +114,35 @@ public class HighScoreCommunicator {
      *
      * @param u username
      */
-    public void addNewUser(String u) {
+    public void tryAddNewUser(final String u) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(final Void... params) {
+                String username = u;
+                username = username.replace(" ", "+");
+                String paramter = baseParameter + "&newuser=" + username;
+                answer = httpRequest(paramter);
+                System.out.println(answer);
+                return null;
+            }
 
+            @Override
+            protected void onPostExecute(Void params) {
+                if (answer.equals("true\n")) {
+                    succes = true;
+                } else {
+                    succes = false;
+                }
+                HighScoreEvent event = new HighScoreEvent(HighScoreCommunicator.this);
+                HighScoreEvent.HEventType type = HighScoreEvent.HEventType.NEWUSER;
+                event.setEtype(type);
+                event.setResponse(answer);
+                onHighscoreChanged(event);
+            }
+
+        }.
+
+                execute();
     }
 
     ;
@@ -130,8 +157,8 @@ public class HighScoreCommunicator {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... params) {
-                String username=u;
-                username=username.replace(" ","+");
+                String username = u;
+                username = username.replace(" ", "+");
                 String paramter = baseParameter + "&getuserpoints=" + username;
                 answer = httpRequest(paramter);
                 System.out.println(answer);
@@ -204,8 +231,8 @@ public class HighScoreCommunicator {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... params) {
-                String username=u;
-                username=username.replace(" ","+");
+                String username = u;
+                username = username.replace(" ", "+");
                 String paramter = baseParameter + "&name=" + username + "&points=" + Integer.toString(score);
                 answer = httpRequest(paramter);
                 System.out.println(answer);
