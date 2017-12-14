@@ -1,4 +1,0 @@
-#Wed Dec 13 18:58:49 CET 2017
-base.0=/home/becker/StudioProjects/Japanese_Sums/app/build/intermediates/transforms/dexMerger/debug/286
-path.0=classes.dex
-renamed.0=classes.dex
