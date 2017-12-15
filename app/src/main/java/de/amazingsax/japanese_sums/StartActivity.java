@@ -146,6 +146,15 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
             case R.id.loginoption:
                 showNewUserDialog();
                 return true;
+            case R.id.showHighScoreOption:
+                if(online) {
+                    Intent intent = new Intent(this, HighScoreListActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast toat=Toast.makeText(this,R.string.offline,Toast.LENGTH_SHORT);
+                    toat.show();
+                }
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

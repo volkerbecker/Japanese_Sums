@@ -2,22 +2,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.amazingsax.japanese_sums"
     android:versionCode="10"
-    android:versionName="1.2.0" >
+    android:versionName="1.2.0">
 
     <uses-sdk
         android:minSdkVersion="15"
-        android:targetSdkVersion="19" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+        android:targetSdkVersion="26" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:largeHeap="true"
         android:allowBackup="true"
+        android:enabled="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" android:enabled="true">
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
         <activity
-            android:name="de.amazingsax.japanese_sums.StartActivity"
-            android:label="@string/app_name" android:screenOrientation="portrait">
+            android:name=".StartActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,9 +31,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="de.amazingsax.japanese_sums.PlayfieldActivity"
-            android:label="@string/title_activity_playfield" android:screenOrientation="portrait">
-        </activity>
+            android:name=".PlayfieldActivity"
+            android:label="@string/title_activity_playfield"
+            android:screenOrientation="portrait" />
+        <activity android:name=".HighScoreListActivity"></activity>
     </application>
 
 </manifest>

@@ -50,5 +50,7 @@
     <string name="erreichtePunkte">Archieved Points</string>
     <string name="offlineButton">Offline</string>
     <string name="loginButton">Login</string>
+    <string name="zeigeHighscoreliste">Zeige Highscoreliste</string>
+    <string name="offline">you are offline</string>
 
 </resources>

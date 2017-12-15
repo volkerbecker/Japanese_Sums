@@ -50,5 +50,7 @@
     <string name="punkteabzug">Check genutzt:  </string>
     <string name="punktesumme">Summe:  </string>
     <string name="erreichtePunkte">Erreichte Punkte</string>
+    <string name="zeigeHighscoreliste">Zeige Highscoreliste</string>
+    <string name="offline">du bist offline</string>
 
 </resources>
