@@ -23,7 +23,7 @@ import java.util.EventObject;
 import static android.text.TextUtils.split;
 
 /**
- * Die Activity mit der dioe App startet, hier werden alle Einstellungen vorgenommen
+ * Die Activity mit der die App startet, hier werden alle Einstellungen vorgenommen
  */
 public class StartActivity extends Activity implements OnClickListener, OnHighscoreChangeListener {
 
@@ -126,7 +126,7 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
         Log.v("amazing", "memoryClass:" + Integer.toString(memoryClass));
 
         loadSettings();
-        if (online == true  && username == null) {
+        if (online == true && username == null) {
             showNewUserDialog();
         }
     }
@@ -144,14 +144,22 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.loginoption:
-                showNewUserDialog();
+                if(highScoreCommunicator.isConnected(this)) {
+                    showNewUserDialog();
+                }
+                else  {
+                    Toast toast = Toast.makeText(this,R.string.noInternet, Toast.LENGTH_LONG);
+                    toast.show();
+                    online=false;
+                }
+
                 return true;
             case R.id.showHighScoreOption:
-                if(online) {
+                if (online) {
                     Intent intent = new Intent(this, HighScoreListActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast toat=Toast.makeText(this,R.string.offline,Toast.LENGTH_SHORT);
+                    Toast toat = Toast.makeText(this, R.string.offline, Toast.LENGTH_SHORT);
                     toat.show();
                 }
                 return true;
@@ -179,11 +187,16 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
         SharedPreferences pref = getSharedPreferences("GAME", 0);
         username = pref.getString("USERNAME", null);
         online = pref.getBoolean("ONLINE", true);
+        if (!highScoreCommunicator.isConnected(this)) {
+            online = false;
+            Toast toast = Toast.makeText(this, R.string.noInternet, Toast.LENGTH_LONG);
+            toast.show();
+        }
         if (!online) {
             points = 0;
         } else {
             highScoreCommunicator.readHighscore(2, 1);
-            if(username != null) highScoreCommunicator.loginAsUser(username);
+            if (username != null) highScoreCommunicator.loginAsUser(username);
         }
     }
 
@@ -219,7 +232,7 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
-            if (online && resultCode >0) highScoreCommunicator.addScore(username,resultCode);
+            if (online && resultCode > 0) highScoreCommunicator.addScore(username, resultCode);
             points += resultCode;
             saveSettings();
             updateUserdata();
@@ -280,7 +293,7 @@ public class StartActivity extends Activity implements OnClickListener, OnHighsc
             tv.setText(s2);
         } else if (event.getEtype() == HighScoreEvent.HEventType.POINTS) {
             if (!answer.equals("no such user\n")) {
-                answer=answer.replace("\n","");
+                answer = answer.replace("\n", "");
                 points = Integer.parseInt(answer);
                 TextView yourscore = (TextView) findViewById(R.id.textView4);
                 String s = getResources().getString(R.string.yourscore) + " " + Integer.toString(points);

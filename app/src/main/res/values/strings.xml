@@ -46,11 +46,12 @@
     <string name="yourscore">Deine Punkte:</string>
     <string name="welcome">Hallo:</string>
     <string name="changeUser">Ändere Nutzer</string>
-    <string name="punktemax">Zahlen bestimmt:  </string>
-    <string name="punkteabzug">Check genutzt:  </string>
+    <string name="punktemax">"Gelöst: "</string>
+    <string name="punkteabzug">"Check malus: "</string>
     <string name="punktesumme">Summe:  </string>
     <string name="erreichtePunkte">Erreichte Punkte</string>
     <string name="zeigeHighscoreliste">Zeige Highscoreliste</string>
     <string name="offline">du bist offline</string>
+    <string name="noInternet">Keine Internetverbung, offline Modus aktiviert!</string>
 
 </resources>

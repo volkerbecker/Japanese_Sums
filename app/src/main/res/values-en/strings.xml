@@ -44,13 +44,14 @@
     <string name="yourscore">Your Points:</string>
     <string name="welcome">Hello:</string>
     <string name="changeUser">Change User</string>
-    <string name="punktemax">Values fixed:  </string>
-    <string name="punkteabzug">Checks:  </string>
+    <string name="punkteabzug">"Check malus: "</string>
     <string name="punktesumme">Sum:  </string>
     <string name="erreichtePunkte">Archieved Points</string>
     <string name="offlineButton">Offline</string>
     <string name="loginButton">Login</string>
     <string name="zeigeHighscoreliste">Zeige Highscoreliste</string>
     <string name="offline">you are offline</string>
+    <string name="noInternet">Internet connection not available, offline mode activated!</string>
+    <string name="punktemax">"Solved: "</string>
 
 </resources>

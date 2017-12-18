@@ -11,7 +11,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.content.Context;
 /**
  * Klasse zur organisation der Internetzugriffe
  */
@@ -29,14 +31,14 @@ public class HighScoreCommunicator {
     private HighScoreCommunicator() {
     }
 
-    ; // Make the constructor private since this is a singleton class
+    ; //
 
     public boolean isSucces() {
         return succes;
     }
 
     /**
-     * Make sure that there is onle one instance of the highscorecommunicator
+     * Make sure that there is only one instance of the highscorecommunicator
      *
      * @return
      */
@@ -256,5 +258,15 @@ public class HighScoreCommunicator {
 
     }
 
+    public boolean isConnected(final Context context) {
+        ConnectivityManager cm =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        return isConnected;
+
+    }
 
 }

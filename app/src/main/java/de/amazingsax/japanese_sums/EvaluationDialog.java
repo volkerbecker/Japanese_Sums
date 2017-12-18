@@ -21,7 +21,7 @@ public class EvaluationDialog extends DialogFragment implements OnClickListener{
 	Context context;
 	
 	int maxPoints=0;
-	int checks=0;
+	int malus =0;
 	
 	public int getMaxPoints() {
 		return maxPoints;
@@ -31,18 +31,20 @@ public class EvaluationDialog extends DialogFragment implements OnClickListener{
 		this.maxPoints = maxPoints;
 	}
 
-	public int getChecks() {
-		return checks;
+	public int getMalus() {
+		return malus;
 	}
 
-	public void setChecks(int checks) {
-		this.checks = checks;
+	public void setMalus(int malus) {
+		this.malus = malus;
 	}
 
-	public static EvaluationDialog newInstance(Context context)
+	public static EvaluationDialog newInstance(Context context,int points,int malus)
 	{
 		EvaluationDialog f = new EvaluationDialog();
 		f.context=context;
+		f.setMaxPoints(points);
+		f.setMalus(malus);
 		return f;
 	}
 	//public EvaluationDialog(Context context) {
@@ -68,8 +70,8 @@ public class EvaluationDialog extends DialogFragment implements OnClickListener{
 		TextView checkpoints = (TextView)view.findViewById(R.id.punkteabzvalue);
 		TextView sumvalue = (TextView)view.findViewById(R.id.punktesumvalue);
 		maxpoints.setText(String.valueOf(maxPoints));
-		checkpoints.setText(String.valueOf(checks));
-		int points=maxPoints-checks;
+		checkpoints.setText(String.valueOf(malus));
+		int points=maxPoints- malus;
 		if(points < 0) points = 0;
 		sumvalue.setText(String.valueOf(points));
 		Button okButton = (Button) view.findViewById(R.id.pointsokay);
