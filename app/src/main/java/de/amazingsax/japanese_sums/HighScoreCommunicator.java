@@ -124,7 +124,7 @@ public class HighScoreCommunicator {
                 username = username.replace(" ", "+");
                 String paramter = baseParameter + "&newuser=" + username;
                 answer = httpRequest(paramter);
-                System.out.println(answer);
+                //System.out.println(answer);
                 return null;
             }
 
@@ -163,7 +163,7 @@ public class HighScoreCommunicator {
                 username = username.replace(" ", "+");
                 String paramter = baseParameter + "&getuserpoints=" + username;
                 answer = httpRequest(paramter);
-                System.out.println(answer);
+                //System.out.println(answer);
                 return null;
             }
 
@@ -200,7 +200,7 @@ public class HighScoreCommunicator {
 
                 String paramter = baseParameter + "&" + "max=" + Integer.toString(number);
                 answer = httpRequest(paramter);
-                System.out.println(answer);
+                //System.out.println(answer);
                 return null;
             }
 
@@ -237,7 +237,7 @@ public class HighScoreCommunicator {
                 username = username.replace(" ", "+");
                 String paramter = baseParameter + "&name=" + username + "&points=" + Integer.toString(score);
                 answer = httpRequest(paramter);
-                System.out.println(answer);
+                //System.out.println(answer);
                 return null;
             }
 
